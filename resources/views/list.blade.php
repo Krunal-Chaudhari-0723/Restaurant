@@ -5,7 +5,7 @@
         <h1>List Of Restaurant</h1>
         @if (Session::get('status'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Hey</strong> Restaurant Addedd SuccessFully!.....
+        <strong>Hey</strong>{{(Session::get('status'))}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -28,7 +28,9 @@
       <td> <p>{{$item->name}}</p> </td>
       <td> <p>{{$item->email}}</p> </td>
       <td> <p>{{$item->address}}</p> </td>
-      <td ><a href="delete/{{$item->id}}"><i class="fa fa-trash"></i></a></td>
+      <td ><a href="delete/{{$item->id}}"><i class="fa fa-trash"></i></a>
+        <a href="edit/{{$item->id}}"><i class="fa fa-edit"></i></a>
+      </td>
     </tr>
    @endforeach
   </tbody>

@@ -17,10 +17,16 @@
             <div class="navbar-nav">
                 <a class="nav-link active  text-light" href="/">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-link  text-light" href="/list">List</a>
-                <a class="nav-link  text-light" href="/add">Add Restaurant</a>
-                <a class="nav-link disabled  text-light" >Search</a>
-                <a class="nav-link disabled  text-light" >Login</a>
-                <a class="nav-link disabled  text-light" >Register</a>
+                <a class="nav-link  text-light" href="/add">Add Restaurant</a>   
+                <a class="nav-link  text-light" >Search</a>
+                 <a class="nav-link  text-light" href="/register">Register</a>
+           
+                @if (Session::get('user'))
+                    <a href=" nav-link text-light" href="#">Welcome.{{Session::get('user')}}</a>
+                @else
+                    <a class="nav-link  text-light" >Login</a>
+                    <a class="nav-link  text-light" href="/register">Register</a>
+                @endif
             </div>
             </div>
             </nav>
